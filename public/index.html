@@ -4,24 +4,99 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web site created using create-snowpack-app" />
-    <link rel="stylesheet" type="text/css" href="/index.css" />
-    <title>Snowpack App</title>
+    <title>TODO_TS</title>
+    <style>
+      body {
+        margin-top: 100px;
+      }
+      li {
+        list-style-type: none;
+      }
+
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      label{
+        border: 2px solid black;
+        padding: 4px;
+        display: flex;
+        gap: 10px;
+        margin: 5px 10px 5px 0px;
+        border-radius: 5px;
+      }
+      * {
+        font-family: monospace;
+        font-size: 1.2rem;
+      }
+      input[type="text"]{
+        border-radius: 5px;
+      }
+      button[type="submit"]{
+        background-color: rgba(0, 0, 0, 0.728);
+        color: white;
+        display: flex;
+        gap: 10px;
+        padding: 3px;
+        border-radius: 5px;
+      }
+      input[type='checkbox'] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 29, 29, 0.653);
+        border-radius: 4px;
+      }
+      input[type='checkbox']:checked {
+        background-color: rgba(0, 155, 0, 0.68);
+      }
+      input[type='checkbox']:checked:hover {
+        background-color: red;
+      }
+      input[type='checkbox']:hover {
+        background-color: green;
+        transition: background-color 300ms;
+      }
+
+      #new-task-form {
+        position: fixed;
+        top: 0;
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      #tasks{
+        padding-inline: 4px;
+        display: flex;
+      }
+    </style>
   </head>
   <body>
-    <img id="img" src="/logo.svg" />
-    <canvas id="canvas"></canvas>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <script type="module" src="/dist/index.js"></script>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="tasks">
+      <div>
+        TODO Tasks - <span id="todo-count"></span>
+        <ul id="list"></ul>
+      </div>
+      <hr>
+      <div>
+        completed Tasks - <span id="completed-count"></span>
+        <ul id="completed"></ul>
+      </div>
+    </div>
+    <form id="new-task-form">
+      Add a new Task
+      <br />
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <button type="submit">
+        <input type="text" id="new-task-title" />Add
+      </button>
+    </form>
   </body>
 </html>
